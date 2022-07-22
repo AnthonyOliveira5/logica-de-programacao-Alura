@@ -1,0 +1,26 @@
+<meta charset="UTF-8">
+
+<script>
+
+    function pulaLinha(){
+
+        document.write("<br>");
+
+    }    
+
+    function escreva(frase){
+
+        document.write(frase);
+        pulaLinha();
+
+    }
+
+    var passado = 1500;
+    var presente = 2022;
+    var passadoPresente = (presente - passado)/28;
+
+    escreva("<h1> Quantos gerações vieram, em média, de 1500 até os dias de hoje?</h1>");
+
+    escreva("<h3>Tendo em vista que um casal tem filhos quando atingem, em média, 28 anos.<br> Até os dias de hoje no Brasil, ja tivemos " + Math.round(passadoPresente) + " gerações de pessoas nascidas no nosso país.</h3>")
+
+</script>
