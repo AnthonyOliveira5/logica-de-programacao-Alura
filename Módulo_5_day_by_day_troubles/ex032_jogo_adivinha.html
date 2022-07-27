@@ -16,20 +16,20 @@
 
 	}
 
-	var numeroPensado = 7;
+	var numeroPensado = Math.round(Math.random() * 10);
+	console.log(numeroPensado);
+
 	var chute = parseInt(prompt("Digíte seu chute!!"));
 	
 	if (chute == numeroPensado) {
 
 		escreva("Acertou!!");
 
-	}
-
-	if (chute != numeroPensado) {
+	} else {
 
 		escreva("Você errou... o número pensado foi " + numeroPensado);
 
 	}
 
-</script>
 
+</script>
