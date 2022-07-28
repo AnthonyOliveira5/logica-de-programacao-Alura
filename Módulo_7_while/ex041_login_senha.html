@@ -4,17 +4,33 @@
     var loginCadastrado = "alura";
     var senhaCadastrada = "alura321";
 
-    var loginInformado = prompt("Informe seu login");
-    var senhaInformada = prompt("Informe sua senha");
+    var maximoTentativas = 3
+    var tentativaAtual = 1
 
-    while(){
+    while(tentativaAtual <= maximoTentativas){
+
+        var loginInformado = prompt("Informe seu login");
+        var senhaInformada = prompt("Informe sua senha");
+
         if( loginCadastrado == loginInformado && senhaCadastrada == senhaInformada ) {
 
         alert("Bem-vindo ao sistema " + loginInformado);
-        } else {
 
-        alert("Login inválido. Tente novamente");
+        tentativaAtual = maximoTentativas;
+
+        } else {
+             if(tentativaAtual == 3){
+
+                alert("Número de tentativas ultrapassado");
+
+             } else{ 
+
+                alert("Login inválido. Tente novamente");
+
         }
+    }
+
+    tentativaAtual = tentativaAtual + 1;
     }
 
 </script>
