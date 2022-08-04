@@ -1,0 +1,42 @@
+<meta charset="UTF-8">
+
+<input/>
+
+<button>Descubra o segredo</button>
+
+<script>
+    var segredos = [3, 5, 7, 9];
+    var input = document.querySelector("input");
+    input.focus();
+    console.log(segredos);
+
+    function verifica(){
+    
+        for(var posicao = 0;posicao < segredos.length; posicao++ ){ 
+
+            var certo = false;
+
+            if(input.value == segredos[posicao]){
+
+                alert("ACERTOU!!!");
+                certo = true;
+                break;
+
+            }
+        }
+    if (certo == false){ 
+        
+        alert("ERROU!!!");
+        
+    }
+
+    input.value = "";
+    input.focus();
+
+    }
+    var button = document.querySelector("button");
+
+    button.onclick = verifica;
+
+
+</script>
