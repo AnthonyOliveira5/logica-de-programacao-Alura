@@ -1,0 +1,83 @@
+<meta charset="UTF-8">
+
+<input/>
+
+<button>Descubra o segredo</button>
+
+<script>
+
+    function chaveAleatoria(){
+        
+        return  Math.round(Math.random() * 10);
+        
+    }
+    
+    function quantChaves(quant){
+
+        var segredos = [];
+        var numero = 1; 
+
+        while(numero <= quant){
+
+            var numeroAleatorio = chaveAleatoria();
+            var achou = false;
+
+            if(numeroAleatorio !== 0){
+                for(var posicao = 0; posicao < segredos.length; posicao++){
+                    
+                    if (segredos[posicao] == numeroAleatorio){
+                            achou = true;
+                            break;
+
+                    }
+                }                       
+                
+                    if(achou == false){
+
+                        segredos.push(numeroAleatorio);
+                        numero++; 
+                    }  
+                }      
+        }
+
+        return segredos;
+
+        }
+
+    var segredos = quantChaves(5);
+
+    
+    var input = document.querySelector("input");
+    input.focus();
+    console.log(segredos);
+
+    function verifica(){
+    
+        for(var posicao = 0;posicao < segredos.length; posicao++ ){ 
+
+            var certo = false;
+
+            if(input.value == segredos[posicao]){
+
+                alert("ACERTOU!!!");
+                certo = true;
+                break;
+
+            }
+        }
+    if (certo == false){ 
+        
+        alert("ERROU!!!");
+        
+    }
+
+    input.value = "";
+    input.focus();
+
+    }
+    var button = document.querySelector("button");
+
+    button.onclick = verifica;
+
+
+</script>
