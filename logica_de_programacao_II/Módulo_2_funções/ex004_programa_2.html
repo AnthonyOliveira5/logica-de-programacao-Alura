@@ -2,10 +2,40 @@
 
 <script>
 
-    var tela = document.querySelector('canvas');
-    var pincel = tela.getContext('2d');
+    function desenhaQuadradoAleatorio(x, y, cor){
 
-    pincel.fillStyle - 'green';
-    pincel.fillRect
+        var tela = document.querySelector('canvas');
+        var pincel = tela.getContext('2d');
+
+        pincel.fillStyle = cor;
+        pincel.fillRect(x, y, 50, 50);
+        pincel.fillStroke = "black";
+        pincel.strokeRect(x, y, 50, 50);
+
+    }
+
+    var x = 0;
+
+    while( x < 600){
+
+        desenhaQuadradoAleatorio(x, 0, "darkgreen");
+        desenhaQuadradoAleatorio(x, 50, "red");
+        desenhaQuadradoAleatorio(x, 100, "yellow");
+        desenhaQuadradoAleatorio(x, 150, "blue");
+
+        x = x + 50;
+
+    }
+
+    for(var x = 0; x < 600; x = x +50){
+
+        desenhaQuadradoAleatorio(x, 200, "red");
+
+    }
+
+    
+    
+    
+    
 
 </script>
