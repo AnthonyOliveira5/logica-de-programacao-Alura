@@ -8,16 +8,24 @@
 	pincel.fillStyle = "grey";
 	pincel.fillRect(0, 0, 600, 400);
 
-	var raio = 15;
+	var raio = 10;
 	
 		function desenhaBolinha(evento){
 
 			var x = evento.pageX - tela.offsetLeft;
 			var y = evento.pageY - tela.offsetTop;
 
-			if(evento.shiftKey){
+			if(evento.shiftKey && evento.altKey){
 
-				raio = raio + 15;
+				alert("Não aperte as duas teclas juntas, apenas separadas");
+
+			}else if(evento.shiftKey && raio <= 40){
+
+				raio = raio + 10
+
+			} else if(evento.altKey && raio > 10){
+
+				raio = raio - 5;
 
 			}
 
